@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        /* Basic styles for the chatbot */
+        #chatbox {
+            width: 400px;
+            height: 500px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+        }
+        .user-message {
+            color: blue;
+            margin: 5px 0;
+        }
+        .bot-message {
+            color: green;
+            margin: 5px 0;
+        }
+        .error-message {
+            color: red;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chatbot</h1>
+    <div id="chatbox">
+        <div id="messages"></div>
+    </div>
+    <input type="text" id="userInput" placeholder="Type your message here...">
+    <button id="sendButton">Send</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
