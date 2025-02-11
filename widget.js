@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         userInput.value = ""; // Clear input field
 
         try {
-            const response = await fetch("http://your-server-ip:5000/chat", {
+            const response = await fetch("http://13.40.70.140:5000/chat", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ message: message }),
