@@ -21,12 +21,12 @@ document.getElementById("sendBtn").addEventListener("click", function() {
     document.getElementById("userInput").value = "";
 
     // Call Flask backend
-    fetch("http://13.40.70.140:5000/chat", {
+    fetch("https://nextgenaisolutions.co.uk/chat", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ "message": userInput })
+        body: JSON.stringify({ message: "Hi" })
     })
     .then(response => response.json())
     .then(data => {
