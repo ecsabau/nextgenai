@@ -110,15 +110,15 @@ nav ul li a {
 /* Chatbot Widget */
 .chatbot-container {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 350px;
-    height: 500px;
+    bottom: 10px;
+    right: 10px;
+    width: 250px;
+    height: 300px;
     border: 2px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    background-color: white;
+    background-color: blue;
 }
 
 .chatbot-container iframe {
