@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen AI Solutions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">NextGen AI Solutions</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">AI Solutions</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>AI-Powered Innovation for Businesses</h1>
+        <p>Revolutionizing customer engagement with cutting-edge AI chatbot technology.</p>
+        <a href="#contact" class="cta-button">Get Started</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>Who We Are</h2>
+        <p>NextGen AI Solutions is dedicated to creating intelligent chatbots that enhance business communication and customer experience.</p>
+    </section>
+
+    <!-- AI Solutions -->
+    <section id="services">
+        <h2>Our AI Chatbot Solutions</h2>
+        <div class="service">
+            <h3>Automated Customer Support</h3>
+            <p>24/7 AI-powered responses to enhance user engagement.</p>
+        </div>
+        <div class="service">
+            <h3>Lead Generation AI</h3>
+            <p>Capture and qualify leads effortlessly with intelligent AI chat flows.</p>
+        </div>
+        <div class="service">
+            <h3>AI-Powered Analytics</h3>
+            <p>Track chatbot interactions and improve customer engagement with real-time insights.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:elvira@nextgenaisolutions.co.uk">elvira@nextgenaisolutions.co.uk</a></p>
+        <p>Phone: <a href="tel:+447570316610">+44 7570 316610</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        <p>© 2025 NextGen AI Solutions. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot-button" onclick="toggleChatbot()">💬 Chat with us</div>
+
+    <div id="chatbot-container">
+        <div id="chatbot-header">
+            <span>NextGen AI Chatbot</span>
+            <button onclick="toggleChatbot()">✖</button>
+        </div>
+        <div id="chatbot-messages">
+            <p class="bot-message">Hello! How can I assist you today?</p>
+        </div>
+        <div id="chatbot-input">
+            <input type="text" id="userInput" placeholder="Type a message...">
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+
+    <script src="widget.js"></script>
+
+</body>
+</html>
