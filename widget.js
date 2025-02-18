@@ -21,7 +21,7 @@ document.getElementById("sendBtn").addEventListener("click", function() {
     document.getElementById("userInput").value = "";
 
     // Call Flask backend
-    fetch("https://18.169.188.7:5000/chat", {
+    fetch("https://13.40.3.102:5000/chat", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
