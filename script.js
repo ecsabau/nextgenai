@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         messagesDiv.appendChild(userMessage);
 
         // Send message to Flask API
-        fetch("http://127.0.0.1:5000/chat", {
+        fetch("http://18.169.188.7:5000/chat", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
