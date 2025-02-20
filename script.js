@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         messagesDiv.appendChild(userMessage);
 
         // Send message to Flask API
-        fetch("https://nextgenaisolutions.co.uk/chat", {
+        fetch("https://nextgenaisolutions.co.uk/chat", {  // Change to your HTTPS domain
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -32,10 +32,15 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(response => response.json())
         .then(data => {
-            // Display chatbot's response
-            const botMessage = document.createElement("div");
-            botMessage.textContent = `Bot: ${data.response}`;
-            messagesDiv.appendChild(botMessage);
+            console.log("API Response:", data);
+
+            if (data.response) {
+                const botMessage = document.createElement("div");
+                botMessage.textContent = `Bot: ${data.response}`;
+                messagesDiv.appendChild(botMessage);
+            } else {
+                console.error("Unexpected response:", data);
+            }
         })
         .catch(error => {
             console.error("Error:", error);
