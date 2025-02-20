@@ -50,7 +50,7 @@
                     })
                     .catch(error => {
                         console.error("Error connecting to chatbot:", error);
-                });
+                })
 
                 const data = await response.json();
                 chatbox.innerHTML += `<p><strong>Bot:</strong> ${data.reply}</p>`;
