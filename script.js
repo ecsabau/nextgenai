@@ -1,3 +1,4 @@
+console.log("Script.js loaded!");
 document.addEventListener("DOMContentLoaded", function () {
     const messagesDiv = document.getElementById("messages");
     const userInputField = document.getElementById("userInput");
