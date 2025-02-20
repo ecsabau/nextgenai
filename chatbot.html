@@ -54,7 +54,7 @@
 
                 const data = await response.json();
                 chatbox.innerHTML += `<p><strong>Bot:</strong> ${data.reply}</p>`;
-            } catch (error) {
+                catch (error) {
                 chatbox.innerHTML += `<p><strong>Bot:</strong> Error connecting to the chatbot API</p>`;
             }
         });
