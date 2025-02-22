@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const response = await fetch("http://13.40.3.102:5000/chat", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ message: userInput })
+                body: JSON.stringify({ message: userMessage })
             });
 
             const data = await response.json();
