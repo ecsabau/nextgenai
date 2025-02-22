@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #chatbox { width: 300px; height: 400px; border: 1px solid #ccc; display: flex; flex-direction: column; position: fixed; bottom: 20px; right: 20px; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.2); display: none; }
+        #chat-header { background: #007bff; color: white; padding: 10px; text-align: center; cursor: pointer; }
+        #messages { flex: 1; padding: 10px; overflow-y: auto; }
+        #user-input { flex: 1; padding: 5px; }
+        #send-btn { background: #007bff; color: white; border: none; padding: 5px 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div id="chatbox">
+        <div id="chat-header">Chat with us</div>
+        <div id="messages"></div>
+        <div style="display: flex; padding: 10px; border-top: 1px solid #ccc;">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+    <button id="chat-btn" style="position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white; border: none; padding: 10px; cursor: pointer;">💬 Chat</button>
+
+    <script src="widget.js"></script> <!-- Load chatbot functions -->
+</body>
+</html>
