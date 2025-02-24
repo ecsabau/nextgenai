@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         userInputField.value = "";
 
         // Send message to Flask API
-        fetch("https://nextgenaisolutions.co.uk/chat", {
+        fetch("https://13.40.3.102:5000/chat", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
