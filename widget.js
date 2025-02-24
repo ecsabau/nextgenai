@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('user-input').value = '';
 
         try {
-            const response = await fetch("http://nextgenaisolutions.co.uk/chat", {
+            const response = await fetch("https://nextgenaisolutions.co.uk/chat", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ message: userMessage })
