@@ -16,7 +16,7 @@ function sendMessage() {
   userInputField.value = "";
 
   // Send message to Flask API
-  fetch("http://nextgenaisolutions.co.uk/chat", {
+  fetch("https://nextgenaisolutions.co.uk/chat", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
