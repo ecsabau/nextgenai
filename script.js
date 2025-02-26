@@ -2,44 +2,33 @@ const userInputField = document.getElementById("userInput");
 const sendButton = document.getElementById("sendMessage");
 const messagesDiv = document.getElementById("messages");
 
-// Function to send a message
 function sendMessage() {
-  const userInput = userInputField.value.trim();
-  if (!userInput) return;
+    const userInput = document.getElementById("userInput");  // Make sure this element exists
+    const messagesDiv = document.getElementById("messagesDiv"); // Ensure chat container exists
 
-  // Display user's message
-  const userMessage = document.createElement("div");
-  userMessage.textContent = `You: ${userInput}`;
-  messagesDiv.appendChild(userMessage);
+    // Send message to Flask API
+    fetch("https://nextgenaisolutions.co.uk/chat", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message: userInput.value }) // Corrected this line
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        const aiResponse = document.createElement("div");
+        aiResponse.textContent = `Bot: ${data.response}`;
+        messagesDiv.appendChild(aiResponse);
 
-  // Clear input field
-  userInputField.value = "";
-
-  // Send message to Flask API
-  fetch("https://nextgenaisolutions.co.uk/chat", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ message: userInput })
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    const aiResponse = document.createElement("div");
-    aiResponse.textContent = `Bot: ${data.response}`;
-    messagesDiv.appendChild(aiResponse);
-  })
-  .catch(error => {
-    console.error("Error:", error);
-    const errorMessage = document.createElement("div");
-    errorMessage.textContent = "Bot: Sorry, there was an error connecting to the server.";
-    messagesDiv.appendChild(errorMessage);
-  });
+        userInput.value = ""; // Clear input field after sending
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
 }
-
 sendButton.addEventListener("click", sendMessage);
