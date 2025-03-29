@@ -33,63 +33,70 @@ A dynamic website integrated with an intelligent chatbot, leveraging cutting-edg
 - Gunicorn
 
 ## 🔐 Configuration
-1️⃣ Clone the Repository
+1️⃣ Clone the Repository:
+
 git clone  https://ecsabau.github.io/nextgenai/
 
 cd nextgen-ai-website
 
 2️⃣ Install Dependencies
-For JavaScript-based projects:
+
+#For JavaScript-based projects:
 
 npm install
-For Python-based projects:
+
+#For Python-based projects:
 
 pip install -r requirements.txt
 
 
 3️⃣ Configure AWS EC2 Instance
-Launch an EC2 instance (Ubuntu recommended).
-Connect via SSH:
+
+#Launch an EC2 instance (Ubuntu recommended).
+
+#Connect via SSH:
 
 ssh -i "C:\Users\ecsab\AWS\NextGenAI-key.pem" ubuntu@13.40.3.102
 
-Update system & install required packages:
+#Update system & install required packages:
 
 sudo apt update && sudo apt upgrade -y
 sudo apt install python3-pip python3-venv nginx -y
 
 4️⃣ Set Up Environment Variables
-Create a .env file and add the necessary credentials:
+
+#Create a .env file and add the necessary credentials:
 
 touch .env
 nano .env
 
-Example format:
+#Example format:
 
 SECRET_KEY=your_secret_key
 DATABASE_URL=your_database_url
 
-Then load the environment variables:
+#Then load the environment variables:
 
 export $(cat .env | xargs)
 
 5️⃣ Configure Nginx & Gunicorn
-Set up Gunicorn
+
+#Set up Gunicorn:
 
 pip install gunicorn
-
 gunicorn --workers 3 --bind 0.0.0.0:5000 wsgi:app
 
-Configure Nginx
-Open Nginx config file:
+#Configure Nginx:
+
+#Open Nginx config file:
 
 sudo nano /etc/nginx/sites-available/nextgenaisolutions
 
-Add the following configuration:
+#Add the following configuration:
 
 nginx
 
-Enable the config & restart Nginx:
+#Enable the config & restart Nginx:
 server {
     listen 80;
     server_name nextgenaisolutions.co.uk;
@@ -101,8 +108,8 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
 }
-Enable the config & restart Nginx:
 
+#Enable the config & restart Nginx:
 sudo ln -s /etc/nginx/sites-available/nextgenaisolutions /etc/nginx/sites-enabled/
 sudo systemctl restart nginx
 
