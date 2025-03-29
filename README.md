@@ -34,7 +34,7 @@ A dynamic website integrated with an intelligent chatbot, leveraging cutting-edg
 
 ## 🔐 Configuration
 1️⃣ Clone the Repository
-git clone [your-repo-link]
+git clone  https://ecsabau.github.io/nextgenai/
 cd nextgen-ai-website
 
 2️⃣ Install Dependencies
