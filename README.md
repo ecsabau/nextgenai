@@ -81,20 +81,22 @@ export $(cat .env | xargs)
 
 5️⃣ Configure Nginx & Gunicorn
 
-#Set up Gunicorn:
-
+Set up Gunicorn:
+```
 pip install gunicorn
 gunicorn --workers 3 --bind 0.0.0.0:5000 wsgi:app
+```
 
-#Configure Nginx:
+Configure Nginx:
 
-#Open Nginx config file:
-
+Open Nginx config file:
+```
 sudo nano /etc/nginx/sites-available/nextgenaisolutions
+```
 
-#Add the following configuration:
+Add the following configuration:
 
-nginx
+```nginx
 
 #Enable the config & restart Nginx:
 server {
@@ -110,9 +112,10 @@ server {
 }
 
 #Enable the config & restart Nginx:
+
 sudo ln -s /etc/nginx/sites-available/nextgenaisolutions /etc/nginx/sites-enabled/
 sudo systemctl restart nginx
-
+```
 
 ## 🚀 Deployment
 ```bash
@@ -151,5 +154,7 @@ Contributions, issues, and feature requests are welcome!
 
 ## Contact & Support
 For inquiries or collaboration opportunities, contact us at:
+
 📩 Email: elvira@nextgenaisolutions.co.uk
+
 🌍 Website: https://nextgenaisolutions.co.uk
